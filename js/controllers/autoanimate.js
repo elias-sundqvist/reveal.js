@@ -1,5 +1,6 @@
 import { queryAll, extend, createStyleSheet, matches, closest } from '../utils/util.js'
 import { FRAGMENT_STYLE_REGEX } from '../utils/constants.js'
+import { random } from 'core-js/fn/number';
 
 // Counter used to generate unique IDs for auto-animated elements
 let autoAnimateCounter = 0;
@@ -190,7 +191,7 @@ export default class AutoAnimate {
 		if( elementOptions.translate !== false || elementOptions.scale !== false ) {
 
 			let presentationScale = this.Reveal.getScale();
-
+			console.log({fromProps, from, toProps, to} )
 			let delta = {
 				x: ( fromProps.x - toProps.x ) / presentationScale,
 				y: ( fromProps.y - toProps.y ) / presentationScale,
@@ -438,6 +439,8 @@ export default class AutoAnimate {
 		const codeNodes = 'pre';
 		const textNodes = 'h1, h2, h3, h4, h5, h6, p, li';
 		const mediaNodes = 'img, video, iframe';
+		const spanNodes = 'span';
+		//const containerNodes = 'span';
 
 		// Eplicit matches via data-id
 		this.findAutoAnimateMatches( pairs, fromSlide, toSlide, '[data-id]', node => {
@@ -459,7 +462,16 @@ export default class AutoAnimate {
 			return node.nodeName + ':::' + node.innerText;
 		} );
 
+		// Containers 
+		//this.findAutoAnimateMatches( pairs, fromSlide, toSlide, containerNodes, node => {
+		//	return node.nodeName + ':::' + node.innerText;
+		//})
+
 		pairs.forEach( pair => {
+
+			if( matches( pair.from, spanNodes ) ) {
+				pair.options = { scale: false, styles: [ 'width', 'height' ] };
+			}
 
 			// Disable scale transformations on text nodes, we transition
 			// each individual text property instead
@@ -552,14 +564,14 @@ export default class AutoAnimate {
 
 			// Retrieve the 'from' element
 			if( fromMatches[key] ) {
-				const pimaryIndex = toMatches[key].length - 1;
+				const primaryIndex = toMatches[key].length - 1;
 				const secondaryIndex = fromMatches[key].length - 1;
 
 				// If there are multiple identical from elements, retrieve
 				// the one at the same index as our to-element.
-				if( fromMatches[key][ pimaryIndex ] ) {
-					fromElement = fromMatches[key][ pimaryIndex ];
-					fromMatches[key][ pimaryIndex ] = null;
+				if( fromMatches[key][ primaryIndex ] ) {
+					fromElement = fromMatches[key][ primaryIndex ];
+					fromMatches[key][ primaryIndex ] = null;
 				}
 				// If there are no matching from-elements at the same index,
 				// use the last one.
@@ -606,7 +618,7 @@ export default class AutoAnimate {
 				result.push( element );
 			}
 
-			if( element.querySelector( '[data-auto-animate-target]' ) ) {
+			if( containsAnimatedElements) {
 				result = result.concat( this.getUnmatchedAutoAnimateElements( element ) );
 			}
 

@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/black.css" id="theme">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
+		<style>
+			.animatedKatex > span {
+				display: inline-block;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section data-math data-auto-animate>
+					$$
+					    \id{vert1}{\Vert}\id{ab}{AB}\id{vert2}{\Vert_{\text{OP}}}
+					$$
+				</section>
+				<section data-math data-auto-animate>
+					$$
+					     \id{eq}{=}\id{maxx}{\max_x}\id{vert1}{\Vert}\id{ab}{\id{a}{A}\id{b}{B}}\id{x}{x}\id{vert2}{\Vert_{L_2}}
+					$$
+				</section>
+				<section data-math data-auto-animate>
+					$$
+					     \id{eq}{\le}\id{vert3}{\Vert}\id{a}{A}\id{vert4}{\Vert_{\text{OP}}}\id{maxx}{\max_x}\id{vert1}{\Vert}\id{b}{B}\id{x}{x}\id{vert2}{\Vert_{L_2}}
+					$$
+				</section>
+				<section data-math data-auto-animate>
+					$$
+					     \id{eq}{=}\id{vert3}{\Vert}\id{a}{A}\id{vert4}{\Vert_{\text{OP}}}\id{vert1}{\Vert}\id{b}{B}\id{vert2}{\Vert_{\text{OP}}}
+					$$
+				</section>
+			</div>
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+				transition: "none",
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ],
+				dependencies: [
+					{ src: 'plugin/math-katex/math-katex.js', async: true }
+				]
+			});
+		</script>
+	</body>
+</html>

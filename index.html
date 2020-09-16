@@ -1,40 +1,349 @@
 <!doctype html>
-<html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Markdown to Slideshow : MarkShow</title>
 
-		<title>reveal.js</title>
+        <meta name="description" content="Markdown to Slideshow : MarkShow">
+        <meta name="author" content="Motyar">
 
-		<link rel="stylesheet" href="dist/reset.css">
-		<link rel="stylesheet" href="dist/reveal.css">
-		<link rel="stylesheet" href="dist/theme/black.css" id="theme">
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-		<!-- Theme used for syntax highlighted code -->
-		<link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
-			</div>
-		</div>
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+        <link rel="manifest" href="/site.webmanifest">
+        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#b504fe">
+        <meta name="msapplication-TileColor" content="#ffffff">
+        <meta name="theme-color" content="#ffffff">
 
-		<script src="dist/reveal.js"></script>
-		<script src="plugin/notes/notes.js"></script>
-		<script src="plugin/markdown/markdown.js"></script>
-		<script src="plugin/highlight/highlight.js"></script>
-		<script>
-			// More info about initialization & config:
-			// - https://revealjs.com/initialization/
-			// - https://revealjs.com/config/
-			Reveal.initialize({
-				hash: true,
 
-				// Learn about plugins: https://revealjs.com/plugins/
-				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
-			});
-		</script>
-	</body>
+        <link rel="stylesheet" href="dist/reset.css">
+        <link rel="stylesheet" href="dist/reveal.css">
+        <link rel="stylesheet" href="dist/theme/white.css" id="theme">
+
+        <link rel="stylesheet" href="/markshow/style.css?9">
+		<style>
+			.animatedKatex > span {
+				display: inline-block;
+			}
+		</style>
+<!--
+        <link rel="stylesheet" href="https://gitpitch.com/assets/libs/css/template.css">
+        <link rel="stylesheet" href="https://gitpitch.com/assets/libs/css/pitch.css">
+        <link rel="stylesheet" href="https://gitpitch.com/assets/libs/css/pitchpro.css">
+        <link rel="stylesheet" href="https://gitpitch.com/assets/libs/css/pitchcore.css">
+        <link rel="stylesheet" href="https://gitpitch.com/pitchme/cdn/github/gitpitch/pro-code-presenting/master/997BFD4A852C52866A5239605BA8117F08DD6EE43A79B111663343783AA1CFB85AA463364A4F96122187386423E37931AE84E834D718BCEF816F81AD76D1E249045BD04458A68A0A6F686A693A8D279EF5FE5C76446A2267E123BCEA1074E194/PITCHME.template.css">
+-->
+
+        <!-- Theme used for syntax highlighting of code -->
+        <link rel="stylesheet" href="https://highlightjs.org/static/demo/styles/monokai.css" id="highlight-theme">
+    </head>
+
+<body id="holder">
+    <div id="right">
+        <div class="reveal">
+            <!-- Any section element inside of this container is displayed as a slide -->
+            <div class="slides">
+            <section data-markdown data-separator-vertical="^===" data-separator="^---">
+              <script type="text/template" id="md"></script>
+            </section>
+            </div>
+
+        <footer id="title-footer"><p id="notification"></p></footer>
+        </div>
+ </div>
+
+ <div id="editor">
+# MarkShow 
+## Markdown to Slideshow
+
+Powered by Reveal.js 
+
+#### feedback is welcomed at
+&lt;a href=&quot;http://twitter.com/motyar&quot; target=&quot;_blank&quot; data-preview-link=&quot;false&quot; &gt;@motyar&lt;/a&gt; on Twitter
+
+&lt;a href=&quot;https://www.producthunt.com/posts/markshow?utm_source=badge-featured&amp;utm_medium=badge&amp;utm_souce=badge-markshow&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=122693&amp;theme=light&quot; alt=&quot;MarkShow - Markdown to Slideshow | Product Hunt Embed&quot; style=&quot;width: 250px; height: 54px;&quot; width=&quot;250px&quot; height=&quot;54px&quot; /&gt;&lt;/a&gt;
+
+---
+
+## How to use mark.show?
+
+- Write your presentation as Markdown text
+- Click on slide area to play
+- Press E to edit again 
+
+---
+
+
+- Drag and Drop a markdown slide file anywhere on this webpage.
+- Select a markdown slide file from your computer.
+&lt;input accept=&quot;.txt,.md&quot; type=&quot;file&quot;&gt;                                              
+- Import from external source    
+&lt;center&gt;&lt;form&gt;
+    &lt;input name=&quot;source&quot; class=&quot;url&quot; value=&quot;&quot; placeholder=&quot;Paste a source URL here and press Enter&quot; autofocus=&quot;&quot; tabindex=&quot;1&quot; type=&quot;url&quot;&gt;          
+&lt;/form&gt;&lt;/center&gt;       
+
+---
+
+# More?
+
+[Check advance example](https://mark.show/?source=https://mark.show/demo.md)
+</div>
+
+<script src="dist/reveal.js"></script>
+        <script src="plugin/zoom/zoom.js"></script>
+        <script src="plugin/notes/notes.js"></script>
+        <script src="plugin/markdown/markdown.js"></script>
+        <script src="plugin/search/search.js"></script>
+        <script src="plugin/highlight/highlight.js"></script>
+        <script src="plugin/math-katex/math-katex.js"></script>
+<script>
+    var hash = window.location.hash;
+
+// Also available as an ES module, see:
+// https://revealjs.com/initialization/
+Reveal.initialize({
+center: true,
+    margin: 0.14,
+    hash: false, 
+    history: true,
+    slideNumber: 't',
+    plugins: [ RevealZoom, RevealNotes, RevealSearch, RevealMarkdown, RevealHighlight, RevealMath ]
+});
+
+</script>
+
+
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.3.1/ace.js" type="text/javascript" charset="utf-8"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/3.11.0/js-yaml.min.js"></script> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FitText.js/1.2.0/jquery.fittext.min.js" defer></script>
+<script>
+var yamlSlideIncrement = 0;
+var doc;
+var inIframe = false;
+var editorHidden = false;
+$(document).ready(function() {
+
+    $("#right").live("click",function(){
+        if($("#editor:visible")){
+            $("#editor").hide();
+            Reveal.configure({"keyboard":true});
+            $("#right").animate({"width":"100%"}, 500, function(){
+                Reveal.toggleOverview(); Reveal.toggleOverview();
+            });
+        }
+
+    });
+
+    $(document).keyup(function( event ) {
+        if(event.target.tagName!="TEXTAREA" && event.keyCode==69 && !inIframe && !editorHidden){
+            event.preventDefault()
+                $("#editor").show();
+            ace.edit("editor").focus();
+            $("#right").animate({"width":"50%"},500, function(){
+                Reveal.toggleOverview(); Reveal.toggleOverview();
+            });
+            Reveal.configure({"keyboard":false});
+        }
+    });
+
+
+    var holder = document;
+    holder.ondragover = function () { return false; };
+    holder.ondrop = function (e) {
+        e.preventDefault();
+
+        var reader = new FileReader();
+
+        reader.onload = function(e) {
+            var editor = ace.edit("editor");
+            editor.focus()
+                editor.session.setValue(reader.result);
+            window.updateSlides(reader.result);
+            Reveal.slide( 0, 0);
+        }
+
+        reader.onerror = function(err) {
+            console.log(err, err.loaded, err.loaded === 0, file);
+        }
+
+        var file = e.dataTransfer.files[0];
+        reader.readAsText(file);
+
+    }
+
+
+    $("input:file").live("change", function(event){
+
+        var file = $(this)[0].files[0]
+            var reader = new FileReader();      
+
+        reader.onload = function(e) {
+            var editor = ace.edit("editor");
+            editor.session.setValue(reader.result);
+            window.updateSlides(reader.result);
+            Reveal.slide( 0, 0);
+        }
+
+        reader.onerror = function(err) {
+            console.error(err, err.loaded, err.loaded === 0, file);
+        }
+
+        reader.readAsText(file);
+    });
+
+
+});
+
+$(function() {
+
+    function currentCursorSlide(cursorLine) {
+        var text = ace.edit("editor").getValue();
+        var lines = text.split('\n');
+        var line = "";
+        var slide = 0;
+        var subSlide = 0;
+
+        for (i = 0; i <= cursorLine; i++) {
+            if (line.substring(0,3) === '---') {
+                slide = slide + 1;
+                subSlide = 0;
+            } 
+            else if (line.substring(0,3) === '===') {
+                subSlide = subSlide + 1;
+            }
+
+            line = lines[i];
+        }
+        var slideNumber = {
+        "h" : slide + yamlSlideIncrement,
+            "v" : subSlide
+        };
+        return slideNumber;
+    } 
+
+    function setupAceEditor() {
+        var editor = ace.edit("editor");
+        editor.setTheme("ace/theme/chrome");
+        editor.getSession().setMode("ace/mode/markdown");
+        editor.renderer.setShowGutter(false);
+        editor.renderer.setPadding( 12 );
+        editor.getSession().setUseWrapMode(true);
+        document.getElementById('editor').style.fontSize='14px';
+
+        editor.setShowPrintMargin(false);
+
+        ace.edit('editor').getSession().selection.on('changeCursor', function(e) {
+            var cursorRow = ace.edit('editor').getCursorPosition().row;
+            var currentSlide = currentCursorSlide(cursorRow);
+            Reveal.slide(currentSlide.h, currentSlide.v);
+        });
+
+        ace.edit('editor').getSession().on('change', function() {
+            window.save();
+        });
+
+        window.save();
+        /*
+        editor.focus();
+        Reveal.toggleOverview(); Reveal.toggleOverview();
+         */
+
+    }
+
+    window.updateSlides = function(markdown){
+        if(markdown.trim().startsWith("---")){
+            yamlStr = markdown.trim().split('---')[1].trim();
+            try {
+                doc = jsyaml.safeLoad(yamlStr);
+                // Editor settings
+                if(doc.editor){
+                    if(doc.editor.hidden===true){
+                        $("#right").click();
+                        //$(".reveal").focus();
+                        editorHidden = true;
+                    }	
+
+                    if(doc.editor.keybinding){
+                        ace.edit("editor").setKeyboardHandler("ace/keyboard/"+doc.editor.keybinding);
+                    }	
+
+                    if(doc.editor.theme){
+                        ace.edit("editor").setTheme("ace/theme/"+doc.editor.theme);
+                    }	
+
+                    if(doc.editor.fontSize){
+                        if(doc.editor.fontSize >12){
+                            document.getElementById('editor').style.fontSize= doc.editor.fontSize+'px';
+                        }
+                    }
+
+                    delete doc.editor;
+                }
+                if(doc.theme){
+                    document.getElementById('theme').setAttribute('href','dist/theme/'+doc.theme.toLowerCase()+'.css');
+                    delete doc.theme;
+                }
+
+                if(doc.highlight){
+                    document.getElementById('highlight-theme').setAttribute('href','//unpkg.com/highlight.js@9.12.0/styles/'+doc.highlight.toLowerCase()+'.css');
+                    delete doc.highlight
+                }
+
+                Reveal.configure(doc);
+                yamlSlideIncrement = -2;
+            } catch (e) {
+                console.error(e);
+            }
+
+            var n = markdown.indexOf("---");
+            var m = markdown.indexOf("---",parseInt(n)+1);
+            var o = markdown.indexOf("---",parseInt(m)+1);
+
+            markdown = markdown.slice(parseInt(m)+3);
+
+        }
+
+
+        $(".slides").html('<section data-markdown data-math data-auto-animate data-separator-vertical="^===" data-separator="^---"><script type="text/template">'+markdown+'</sc'+'ript></section>'); 
+        Reveal.configure({"keyboard":false});
+        Reveal.getPlugin('markdown').processSlides(document) ;
+        Reveal.getPlugin('markdown').convertSlides() ;
+
+        Reveal.getPlugin("highlight").init(Reveal);
+        Reveal.getPlugin("math").init(Reveal);
+
+        Reveal.sync();
+        Reveal.toggleOverview(); Reveal.toggleOverview();
+
+        if ((window.location !== window.parent.location ) || (window.location.search.endsWith("print-pdf"))) {
+            $("#right").click();
+            inIframe = true;
+        } 
+
+
+    }
+
+    window.save = function() {
+        var markdown, editor;
+        editor = ace.edit("editor");
+        markdown = editor.getValue();
+        window.updateSlides(markdown);
+        window.location.hash = hash;
+        
+    };
+
+
+    setupAceEditor();
+
+});
+
+
+</script>
+
+    </body>
 </html>
